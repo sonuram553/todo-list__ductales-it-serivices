@@ -31,7 +31,8 @@ export class CreateTodoComponent implements OnInit {
 
   onStatusChange = (value) => {
     if (value === 'INVALID') return;
-    this.todos.push({ ...this.todoForm.value, completed: null });
+    //this.todos.push({ ...this.todoForm.value, completed: null });
+    this.todos = [...this.todos, { ...this.todoForm.value, completed: null }];
     this.todoForm.reset();
   };
 }
