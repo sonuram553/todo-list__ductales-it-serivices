@@ -1,6 +1,19 @@
 <form [formGroup]="todoForm">
   <mat-form-field>
     <mat-label>Title</mat-label>
-    <input type="text" matInput />
+    <input type="text" matInput formControlName="title" required />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description" required></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Repeat Task</mat-label>
+    <mat-select formControlName="repeating_task" required>
+      <mat-option value="yes">Yes</mat-option>
+      <mat-option value="no">No</mat-option>
+    </mat-select>
   </mat-form-field>
 </form>

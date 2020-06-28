@@ -2,3 +2,11 @@
   display: block;
   margin: 4rem;
 }
+
+form {
+  width: 300px;
+  > * {
+    display: block;
+    width: 100%;
+  }
+}

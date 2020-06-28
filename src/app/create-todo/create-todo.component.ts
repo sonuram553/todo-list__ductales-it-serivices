@@ -19,7 +19,7 @@ export class CreateTodoComponent implements OnInit {
     this.todoForm = this.fb.group({
       title: [''],
       description: [''],
-      repeating: [''],
+      repeating_task: [''],
     });
   }
 }
