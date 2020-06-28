@@ -8,9 +8,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialsModule } from './shared/materials.module';
 import { TodoListComponent } from './create-todo/todo-list/todo-list.component';
 import { TodoListItemComponent } from './create-todo/todo-list/todo-list-item/todo-list-item.component';
+import { DoneTodoListComponent } from './create-todo/done-todo-list/done-todo-list.component';
 
 @NgModule({
-  declarations: [AppComponent, CreateTodoComponent, TodoListComponent, TodoListItemComponent],
+  declarations: [AppComponent, CreateTodoComponent, TodoListComponent, TodoListItemComponent, DoneTodoListComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
