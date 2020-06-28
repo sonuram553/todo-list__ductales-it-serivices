@@ -1,5 +1,5 @@
 <div class="todo">
-  <mat-checkbox #checkbox></mat-checkbox>
-  <h2>{{ todo["title"] }}</h2>
+  <mat-checkbox #checkbox [checked]="todo['completed']"></mat-checkbox>
+  <h3>{{ todo["title"] }}</h3>
   <p>{{ todo["description"] }}</p>
 </div>

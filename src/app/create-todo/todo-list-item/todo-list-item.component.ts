@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { Todo } from 'src/app/shared/types';
 import { MatCheckbox } from '@angular/material/checkbox';
-import { debounceTime } from 'rxjs/operators';
+import { CreateTodoService } from '../create-todo.service';
 
 @Component({
   selector: 'app-todo-list-item',
@@ -21,12 +21,14 @@ export class TodoListItemComponent implements OnInit, AfterViewInit {
 
   @Input() todo: Todo;
 
-  constructor() {}
+  constructor(private createTodoService: CreateTodoService) {}
 
   ngOnInit(): void {}
+
   ngAfterViewInit() {
-    this.checkbox.change.pipe(debounceTime(50)).subscribe(({ checked }) => {
-      console.log(checked);
+    this.checkbox.change.subscribe(({ checked }: any) => {
+      if (!checked) return;
+      this.createTodoService.changeTodoStatus(this.todo.id, true);
     });
   }
 }

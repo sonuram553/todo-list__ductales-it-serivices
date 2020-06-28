@@ -6,8 +6,10 @@ import { Subject, BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class CreateTodoService {
+  private count = 0;
   private todos: Todo[] = [
     {
+      id: 100,
       title: 'hello',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       repeating_task: 'no',
@@ -36,7 +38,20 @@ export class CreateTodoService {
   }
 
   addTodo(newTodo: Todo) {
-    this.todos = [...this.todos, { ...newTodo }];
+    this.todos = [...this.todos, { ...newTodo, id: this.count }];
+    this.count++;
     this.emitTodos();
+    //console.log(this.todos);
+  }
+
+  changeTodoStatus(id: number, status: boolean) {
+    const index = this.todos.findIndex((todo) => id === todo.id);
+    this.todos = [
+      ...this.todos.slice(0, index),
+      { ...this.todos[index], completed: status },
+      ...this.todos.slice(index + 1),
+    ];
+    this.emitTodos();
+    console.log(this.todos);
   }
 }
