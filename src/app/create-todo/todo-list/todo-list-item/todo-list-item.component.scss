@@ -1,0 +1,24 @@
+.todo {
+  display: grid;
+  gap: 0 1rem;
+  grid-template-columns: max-content 1fr;
+  margin-bottom: 1rem;
+
+  mat-checkbox {
+    grid-row: span 2;
+    align-self: center;
+    justify-self: center;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+
+  p {
+    margin-top: 4px;
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+}
