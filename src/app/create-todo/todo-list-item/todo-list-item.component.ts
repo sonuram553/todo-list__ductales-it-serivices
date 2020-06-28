@@ -27,8 +27,7 @@ export class TodoListItemComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.checkbox.change.subscribe(({ checked }: any) => {
-      if (!checked) return;
-      this.createTodoService.changeTodoStatus(this.todo.id, true);
+      this.createTodoService.changeTodoStatus(this.todo.id, checked);
     });
   }
 }

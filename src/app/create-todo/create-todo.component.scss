@@ -4,14 +4,44 @@
   margin: 0 auto;
   width: 80%;
   display: grid;
-  gap: 4rem;
-  grid-template-columns: 1fr 2fr 2fr;
+  gap: 3rem 4rem;
+  grid-template-columns: 2fr 2fr 2fr;
 }
 
 form {
-  width: 300px;
+  width: 100%;
   > * {
     display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  :host {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  :host {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  form {
+    width: 80%;
+    justify-self: center;
+    grid-column: 1 / -1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :host {
+    width: 100%;
+    padding: 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  form {
     width: 100%;
   }
 }
