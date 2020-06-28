@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateTodoComponent } from './create-todo/create-todo.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MaterialsModule } from './materials.module';
+import { MaterialsModule } from './shared/materials.module';
 
 @NgModule({
   declarations: [AppComponent, CreateTodoComponent],
