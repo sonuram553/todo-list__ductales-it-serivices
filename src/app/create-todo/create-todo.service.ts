@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Todo } from '../shared/types';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -15,18 +15,6 @@ export class CreateTodoService {
       repeating_task: 'no',
       completed: null,
     },
-    /*  {
-      title: 'hello',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      repeating_task: 'no',
-      completed: null,
-    },
-    {
-      title: 'hello',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      repeating_task: 'no',
-      completed: null,
-    }, */
   ];
 
   todos$ = new BehaviorSubject<Todo[]>(this.todos);
@@ -41,7 +29,6 @@ export class CreateTodoService {
     this.todos = [...this.todos, { ...newTodo, id: this.count }];
     this.count++;
     this.emitTodos();
-    //console.log(this.todos);
   }
 
   changeTodoStatus(id: number, status: boolean) {
@@ -52,6 +39,5 @@ export class CreateTodoService {
       ...this.todos.slice(index + 1),
     ];
     this.emitTodos();
-    console.log(this.todos);
   }
 }
