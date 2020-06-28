@@ -10,7 +10,26 @@ import { Todo } from '../shared/types';
 })
 export class CreateTodoComponent implements OnInit {
   todoForm: FormGroup;
-  todos: Todo[] = [];
+  todos: Todo[] = [
+    {
+      title: 'hello',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      repeating_task: 'no',
+      completed: null,
+    },
+    {
+      title: 'hello',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      repeating_task: 'no',
+      completed: null,
+    },
+    {
+      title: 'hello',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      repeating_task: 'no',
+      completed: null,
+    },
+  ];
 
   constructor(private fb: FormBuilder) {}
 

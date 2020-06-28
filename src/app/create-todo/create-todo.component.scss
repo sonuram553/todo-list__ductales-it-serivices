@@ -1,6 +1,11 @@
 :host {
   display: block;
-  margin: 4rem;
+  padding: 4rem;
+  margin: 0 auto;
+  width: 80%;
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr 2fr 2fr;
 }
 
 form {
